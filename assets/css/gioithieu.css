@@ -1,0 +1,381 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --primary-color: #86ba09;
+    --menu-text: #7f7f7f;
+    --white-text: #fff;
+}
+
+@keyframes grow {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform: scaleX(1);
+    }
+    to {
+        transform: scaleX(1.05);
+    }
+}
+
+body {
+    font-family: 'Roboto Slab', serif;
+}
+
+.header {
+    width: 100%;
+    height: 80px;
+    background-color: #f7f7f7;
+    display: flex;
+    line-height: 80px;
+    text-transform: uppercase;
+    z-index: 1;
+    position: fixed;
+}
+
+.header__heading {
+    color: var(--primary-color);
+    font-size: 32px;
+    font-weight: 700;
+    padding: 0 155px;
+    text-decoration: none;
+    display: block;
+}
+
+.header__list {
+    display: flex;
+}
+
+.header__list--items {
+    list-style-type: none;
+    padding: 0 24px;
+    display: inline-block;
+    position: relative;
+}
+
+.header__list--items:hover .shop {
+    display: block;
+}
+
+.header__items--link {
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--menu-text);
+}
+
+.header__items--link:hover {
+    color: var(--primary-color);
+}
+
+.header__items--home {
+    color: var(--primary-color);
+}
+
+.icon__angle-down {
+    margin-left: 4px;
+}
+
+.shop {
+    list-style-type: none;
+    height: 195px;
+    background-color: var(--white-text);
+    position: absolute;
+    top: 65px;
+    box-shadow: 0 1px 3px -2px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 2px;
+    display: none;
+    animation: grow ease-in 0.25s;
+    transform-origin: calc(100% - 150px) top;
+}
+
+.shop::before {
+    content: "";
+    position: absolute;
+    border: solid;
+    border-width: 25px 25px; 
+    border-color: transparent transparent var(--white-text) transparent;
+    top: -35px;
+    right: 120px;
+    z-index: -1;
+}
+
+.shop__list {
+    min-width: 180px;
+    line-height: 48px;
+    border-radius: 2px;
+}
+
+.shop__list:hover{
+    background-color: #f7f7f7;
+}
+.shop__list:hover a {
+    color: var(--primary-color);
+}
+
+.shop__list--items {
+    text-decoration: none;
+    color: var(--menu-text);
+    font-size: 15px;
+    font-weight: 700;
+    padding: 0 12px;
+}
+
+.header__icons {
+    font-size: 14.4px;
+    font-weight: 700;
+    color: var(--menu-text);
+    margin-left: 196px;
+}
+
+.icon-link {
+    padding: 0 16px;
+}
+
+.icon-link:hover {
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* Code Slider */
+.slider__background {
+    
+    /* overflow: hidden; */
+    display: block;
+}
+
+.slider__img {
+    width: 100%;
+    height: 180px;
+}
+
+.slider {
+    padding-top: 80px;
+    text-align: center;
+    position: relative;
+
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 40px;
+}
+
+.slider__info {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+}
+
+.slider__nav {
+    display: flex;
+    justify-content: center;
+}
+
+.title__desc {
+    font-size: 20px;
+    padding: 8px 6px;
+}
+
+/* Code body */
+.body__introduce {
+    width: 100%;
+    background-color: #f7f7f7;
+}
+
+.body__introduce--item {
+    width: 80%;
+    margin: auto;
+    background-color: var(--white-text);
+}
+
+.body__title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    padding: 32px 0;
+}
+
+.body__title--text {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--menu-text);
+    padding: 0 0 16px 32px;
+}
+
+.body__title--desc {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+    padding: 0 32px 16px 32px;
+}
+
+.body__img {
+    width: 80%;
+    margin: 16px auto;
+}
+
+.img {
+    width: 100%;
+    height: 650px;
+}
+
+.body__title--thanks {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 0 60px 0;
+}
+
+/* Code creat */
+.create {
+    width: 80%;
+    margin: auto;
+    position: relative;
+}
+
+.creat__img {
+    width: 100%;
+    height: 424px;
+}
+
+.create__email {
+    width: 100%;
+    position: absolute;
+    top: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+.create__email--text {
+    width: 400px;
+    padding: 8px 16px;
+    border: none;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    outline: none;
+    color: var(--menu-text);
+    background-color: var(--white-text);
+    font-size: 18px;
+    font-family: 'Roboto Slab', serif;
+}
+
+.create__email--btn {
+    width: 110px;
+    padding: 8px 16px;
+    border: none;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: var(--white-text);
+    background-color: var(--primary-color);
+    font-size: 18px;
+    font-family: 'Roboto Slab', serif;
+}
+
+.create__email--btn:hover {
+    cursor: pointer;
+    background-color: #6b9507;
+    color: var(--white-text);
+}
+
+/* Code contact */
+.contact {
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: space-around;
+}
+
+.contact__info {
+    font-size: 20px;
+    font-weight: 700;
+    color: #121212;
+    margin-top: 55px;
+}
+
+.contact__info--items {
+    list-style-type: none;
+    font-size: 14px;
+    color: var(--menu-text);
+    margin: 16px 0;
+}
+
+.contact__info--items:hover {
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.contact__logo {
+    width: 182px;
+    height: 61px;
+}
+
+.contact__image {
+    transform: translate(-10%, -40%);
+}
+
+
+.contact__phone {
+    transform: translateY(-20%);
+}
+
+.contact__title {
+    text-transform: uppercase;
+}
+
+/* Code footer */
+.footer {
+    width: 100%;
+    height: 48px;
+    background-color: #121212;
+    text-align: center;
+    line-height: 48px;
+}
+
+.footer__copyrite {
+    color: #536977;
+    font-size: 15px;
+    display: inline-block;
+}
+
+.footer__icon {
+    color: #536977;
+}
+
+.sale__background--description {
+    width: 100%;
+    position: absolute;
+    top: 25%;
+}
+
+.sale__heading {
+    font-size: 35px;
+    font-weight: 700;
+    color: var(--white-text);
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.sale__heading--desc {
+    color: var(--white-text);
+    font-size: 16px;
+    text-align: center;
+}
+
